@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test Document</title>
+</head>
+<body>
+  
+  <!-- Styles -->
+  <style>
+    html {
+      font-family: "Anonymous Pro";
+      font-size: 16;
+    }
+    body {
+      padding: 0;
+      margin: 0;
+      background: #1e1e1e;
+      line-height: 20px;
+    }
+
+    .sidebar {
+      width: 50px;
+      height: 100%;
+      position: absolute;
+      background: #252526;
+    }
+
+    .numbers {
+      width: 30px;
+      position: absolute;
+      margin: 0 0 0 55px;
+      text-align: right;
+    }
+    .numbers li {
+      color: #5a5a5a;
+      list-style-type: none;
+    }
+
+    .content {
+      margin: 0 0 0 85px;
+      padding: 0 0 0 25px;
+    }
+
+    .palette li {
+      list-style-type: none;
+      display: inline-block;
+      margin: 0 6px 0 0;
+      width: 40px;
+      height: 40px;
+    }
+    .color-1 { background: #808080; } /* COMMENT */
+    .color-2 { background: #88bbcc; } /* GLACIER */
+    .color-3 { background: #cc5555; } /* CHESTNUTROSE */
+    .color-4 { background: #99bbbb; } /* SHADOWGREEN */
+    .color-5 { background: #88aa88; } /* ENVY */
+    .color-6 { background: #cc9944; } /* TUSSOCK */
+    .color-7 { background: #eeccaa; } /* PANCHO */
+    .color-8 { background: #aa8899; } /* BOUQUET */
+
+    .dot {
+      color: #3d3d3c;
+    }
+    .comment {
+      color: #808080;
+      font-style: italic; 
+    }
+  </style>
+
+  <!-- Content -->
+  <div>
+    <div class="sidebar">&nbsp;</div>
+    <div class="numbers">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>13</li>
+      <li>14</li>
+      <li>15</li>
+      <li>16</li>
+      <li>17</li>
+      <li>18</li>
+      <li>19</li>
+      <li>20</li>
+      <li>21</li>
+      <li>22</li>
+      <li>23</li>
+      <li>24</li>
+      <li>25</li>
+      <li>26</li>
+      <li>27</li>
+      <li>28</li>
+      <li>29</li>
+      <li>30</li>
+      <li>31</li>
+      <li>32</li>
+    </div>
+    <div class="content">
+
+      <!-- Color palette -->
+      <div class="palette">
+        <br/>
+        <li class="color-1"></li>
+        <li class="color-2"></li>
+        <li class="color-3"></li>
+        <li class="color-4"></li>
+        <li class="color-5"></li>
+        <li class="color-6"></li>
+        <li class="color-7"></li>
+        <li class="color-8"></li>
+      </div>
+
+      <!-- HTML test -->
+      <p>
+        <span class="comment">&lt;!-- HTML example comment --&gt;</span><br/>
+        &lt;div data-role="header" id="header" class="no-border"&gt;<br/>
+          <span class="dot">&middot;&middot;</span>&lt;div class="presence-logo-header center"&gt;<br/>
+            <span class="dot">&middot;&middot;&middot;&middot;</span>&lt;img src="/img/presence-logo-white.png" class="full-width"&gt;<br/>
+          <span class="dot">&middot;&middot;</span>&lt;/div&gt;<br/>
+          <span class="dot">&middot;&middot;</span>&lt;a href="#" onclick="openMenu(event)" data-i18n&gt;global:buttons.menu&lt;/a&gt;<br/>
+        &lt;/div&gt;
+      </p>
+
+      <!-- CSS test -->
+      <p>
+        <span class="comment">/* CSS example comment */</span><br/>
+        #presence-page.cc .ui-listview .ui-li-static,<br/>
+        div.internal-usage::after,<br/>
+        .main-style:hover > .normal {<br/>
+          <span class="dot">&middot;&middot;</span>padding: 1em;<br/>
+          <span class="dot">&middot;&middot;</span>background-color: #FFF;<br/>
+          <span class="dot">&middot;&middot;</span>border-color: rgba(34,36,38,.15) !important;<br/>
+          <span class="dot">&middot;&middot;</span>border-radius: .28571429rem;<br/>
+          <span class="dot">&middot;&middot;</span>box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);<br/>
+        }<br/>
+        .presence-page.cc div.ui-controlgroup-label,<br/>
+        [otherAttr~='foo'] {<br/>
+          <span class="dot">&middot;&middot;</span>font-family: "HelveticaNeue-CondensedBold",Helvetica Neue, Arial, sans-serif;<br/>
+          <span class="dot">&middot;&middot;</span>font-stretch: condensed;<br/>
+          <span class="dot">&middot;&middot;</span>background-image: url(/img-path/img.jpg);<br/>
+          <span class="dot">&middot;&middot;</span>border-color:red;<br/>
+        }
+      </p>
+    
+      <!-- PHP test -->
+      <p>
+        <span class="comment">// PHP example comment</span><br/>
+        &lt;?php echo "Hello World!" ?&gt;
+      </p>
+
+    </div>
+  </div>
+
+</body>
+</html>

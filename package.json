@@ -1,0 +1,44 @@
+{
+  "name": "alone-dark-theme",
+  "version": "0.0.2",
+  "displayName": "Alone in the Dark Theme",
+  "homepage": "https://github.com/maxcoffer/alone-dark-theme",
+  "description": "Alone in the Dark Theme for Visual Studio Code",
+  "publisher": "alone-dark-theme",
+  "license": "MIT",
+  "scripts": {
+    "build": "mkdir -p ./theme && node ./build.js",
+    "vscode:prepublish": "npm run build"
+  },
+  "maintainers": [
+    "Max Coffer <maxcoffer@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxcoffer/alone-dark-theme"
+  },
+  "bugs": {
+    "url": "https://github.com/maxcoffer/alone-dark-theme/issues"
+  },
+  "engines": {
+    "vscode": "*"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#3c4557",
+    "theme": "dark"
+  },
+  "contributes": {
+    "themes": [{
+      "label": "Alone in the Dark",
+      "uiTheme": "vs-dark",
+      "path": "./theme/alone.json"
+    }]
+  },
+  "devDependencies": {
+    "js-yaml": "^3.8.2"
+  }
+}

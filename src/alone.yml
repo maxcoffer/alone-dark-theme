@@ -1,0 +1,522 @@
+
+name: Alone in the Dark
+author: Max Coffer
+maintainers:
+  - Max Coffer <maxcoffer@gmail.com>
+semanticClass: theme.alone
+scheme:
+  BG: &BG '#1e1e1e'
+  FG: &FG '#b2b2b2'
+  SELECTION: &SELECTION '#3f3f46'
+  COMMENT: &COMMENT '#808080'
+  GLACIER: &GLACIER '#88bbcc'
+  CHESTNUTROSE: &CHESTNUTROSE '#cc5555'
+  SHADOWGREEN: &SHADOWGREEN '#99bbbb'
+  ORANGE: &ORANGE '#ffb86c'
+  PINK: &PINK '#ff79c6'
+  PURPLE: &PURPLE '#bd93f9'
+  RED: &RED '#ff5555'
+  ENVY: &ENVY '#88aa88'
+  SCARYSKIN: &SCARYSKIN '#ab8069'
+  TUSSOCK: &TUSSOCK '#cc9944'
+  PANCHO: &PANCHO '#eeccaa'
+  BOUQUET: &BOUQUET '#aa8899'
+settings:
+  - settings:
+      background: *BG
+      foreground: *FG
+      lineHighlight: '#44475a75'
+      selection: *SELECTION
+
+      # Searching
+      referenceHighlight: *PURPLE
+      findMatchHighlight: *SELECTION
+      currentFindMatchHighlight: '#f8f8f275'
+
+      # Symbols
+      wordHighlight: '#8be9fd50'       # Background color of symbol with read-access.
+      wordHighlightStrong: '#50fa7b50' # Background color of symbol with write-access.
+
+      # Links
+      activeLinkForeground: *SHADOWGREEN
+
+      # Unused
+      caret:
+      guide:
+      invisibles:
+      linkForeground:
+      rangeHighlight:     # Background color of the line that the current find result is on.
+      hoverHighlight:     # Background color of symbol when hovered.
+      inactiveSelection:  # Background color of selections when not in focus.
+      selectionHighlight: # Background color of regions highlighted while selecting.
+      findRangeHighlight: # Highlight of selected range using "find in selection" mode.
+  
+  # General
+  - scope: emphasis
+    settings:
+      fontStyle: italic
+  - scope: strong
+    settings:
+      fontStyle: bold
+  - scope: header
+    settings:
+      foreground: *PINK
+  - scope: comment
+    settings:
+      foreground: *COMMENT
+      fontStyle: italic
+  - scope: source
+    settings:
+      foreground: *FG
+
+  # Constants
+  - scope: constant.language
+    settings:
+      foreground: *SHADOWGREEN
+  - scope: 
+    - constant.numeric
+    - constant.numeric.integer
+    - constant.numeric.float
+    - constant.numeric.decimal
+    - constant.numeric.scss
+    - constant.numeric.css
+    - constant.numeric.less
+    - constant.numeric.json
+    - constant.numeric.color.rgb-value
+    - constant.language.boolean
+    - constant.language.null
+    - constant.language.undefined
+    - variable.other.constant
+    settings:
+      foreground: *PURPLE
+  - scope: constant.regexp
+    settings:
+      foreground: *PINK
+  
+  # Variables
+  - scope: variable
+    settings:
+      foreground: *FG
+  - scope: variable.language.this
+    settings:
+      foreground: *GLACIER
+  - scope: variable.parameter
+    settings:
+      fontStyle: italic
+      foreground: *ORANGE
+  
+  # Keywords
+  - scope:
+    - keyword
+    - punctuation.definition.keyword
+    settings:
+      foreground: *PINK
+  - scope: keyword.operator.new
+    settings:
+      fontStyle: bold
+
+  # Diffs
+  - scope:
+    - meta.diff
+    - meta.diff.header
+    settings:
+      foreground: *COMMENT
+  - scope: markup.underline
+    settings:
+      fontStyle: underline
+  - scope: markup.bold
+    settings:
+      fontStyle: bold
+      foreground: *ORANGE
+  - scope: markup.heading
+    settings:
+      fontStyle: bold
+      foreground: *PURPLE
+  - scope: markup.italic
+    settings:
+      foreground: *GLACIER
+      fontStyle: italic
+  - scope: markup.inserted
+    settings:
+      foreground: *SHADOWGREEN
+  - scope: markup.deleted
+    settings:
+      foreground: *RED
+  - scope: markup.changed
+    settings:
+      foreground: *ORANGE
+  - scope: invalid
+    settings:
+      background: *RED
+      foreground: *FG 
+  - scope: invalid.deprecated
+    settings:
+      background: *PURPLE
+      foreground: *FG
+  - scope: entity.name.filename
+    settings:
+      foreground: *GLACIER
+  - scope: markup.error
+    settings:
+      foreground: *RED
+  
+  # Markdown
+  - scope:
+    - beginning.punctuation.definition.quote.markdown
+    - beginning.punctuation.definition.list.markdown
+    settings:
+      foreground: *GLACIER
+  - scope: markup.inline.raw
+    settings:
+      foreground: *SHADOWGREEN
+  - scope:
+    - markup.underline.link.markdown
+    - markup.underline.link.image.markdown
+    settings:
+      foreground: *GLACIER
+  - scope:
+    - string.other.link.description.markdown
+    - string.other.link.title.markdown
+    settings:
+      foreground: *PINK
+  - scope: markup.quote.markdown
+    settings:
+      foreground: *COMMENT
+  - scope: meta.separator.markdown
+    settings:
+      foreground: *COMMENT
+  - scope: punctuation.definition.markdown
+    settings:
+      foreground: *SHADOWGREEN
+  - scope: fenced_code.block.language
+    settings:
+      foreground: *ORANGE 
+  
+  # Meta
+  - scope: meta.selector
+    settings:
+      foreground: *FG 
+  - scope: meta.preprocessor
+    settings:
+      foreground: *GLACIER
+  - scope: meta.preprocessor.string
+    settings:
+      foreground: *ORANGE
+  - scope: meta.preprocessor.numeric
+    settings:
+      foreground: *PURPLE
+
+  # Storage
+  - scope: storage
+    settings:
+      foreground: *PINK
+  - scope:
+    - storage.type.class
+    - storage.type.function
+    - storage.type.interface
+    - storage.type.type
+    settings:
+      fontStyle: regular
+      foreground: *PINK
+  - scope:
+    - storage.type
+    - storage.type.class.jsdoc
+    settings:
+      foreground: *GLACIER
+      fontStyle: italic
+  - scope: storage.modifier
+    settings:
+      foreground: *PINK
+  
+  # String
+  - scope: string
+    settings:
+      foreground: *GLACIER
+  - scope: string.tag
+    settings:
+      foreground: *GLACIER
+  - scope: string.value
+    settings:
+      foreground: *GLACIER
+  - scope: string.regexp
+    settings:
+      foreground: *RED
+  
+  # Support
+  - name: Provided by external / built-in library
+    scope:
+    - support.function
+    settings:
+      foreground: *GLACIER
+  - name: Defined language constants
+    scope: support.constant
+    settings:
+      foreground: *GLACIER
+  - name: Defined language constant properties
+    scope: support.constant.property
+    settings:
+      foreground: *PURPLE
+  - name: External / built-in types and classes
+    scope:
+    - support.type
+    - support.class
+    settings:
+      fontStyle: italic
+      foreground: *GLACIER
+  - name: Object built-ins (e.g. __dirname in nodejs)
+    scope: support.variable.object
+    settings:
+      foreground: *PURPLE
+
+  # General Language Constructs
+  - name: Class "constructor" statement
+    scope: meta.method.declaration storage.type
+    settings:
+      fontStyle: regular
+      foreground: *PINK
+  - name: Variable declarations
+    scope: source meta.var.expr storage.type
+    settings:
+      fontStyle: regular
+      foreground: *GLACIER
+  - name: Functions
+    scope: entity.name.function
+    settings:
+      foreground: *SHADOWGREEN
+  - name: Inherited classes
+    scope: entity.other.inherited-class
+    settings:
+      fontStyle: italic underline
+      foreground: *SHADOWGREEN
+  - name: Decorators
+    scope: 
+    - meta.decorator
+    - meta.decorator variable.other.readwrite
+    settings:
+      foreground: *FG 
+      fontStyle: italic
+  
+  # CSS / CSS Preprocessors
+  - scope:
+    - support.constant.property-value
+    - support.constant.color
+    - support.constant.font-name
+    - support.constant.media-type
+    - support.constant.media
+    settings:
+      foreground: *FG
+  - scope:
+    - constant.numeric.color.hex-value
+    - constant.other.color.rgb-value
+    - constant.other.rgb-value
+    settings:
+      foreground: *GLACIER
+  - scope:
+    - variable.css
+    - variable.scss
+    - variable.stylus
+    - variable.other.less
+    settings:
+      foreground: *ORANGE
+  - scope:
+    - meta.property-list.css
+    - support.type.vendored.property-name
+    - support.type.property-name
+    settings:
+      foreground: *ENVY 
+  - name: HTML tags in CSS
+    scope: entity.name.tag.css
+    settings:
+      foreground: *PINK
+  - scope:
+    - entity.other.attribute-name.parent-selector.css
+    - entity.other.attribute-name.pseudo-class.css
+    - entity.other.attribute-name.pseudo-element.css
+    settings:
+      fontStyle: italic
+      foreground: *SHADOWGREEN
+  - scope:
+    - entity.other.attribute-name.id.css
+    - source.css.less entity.other.attribute-name.id
+    - entity.other.attribute-name.attribute.scss
+    - entity.other.attribute-name.scss
+    - entity.other.attribute-name.class.css
+    - entity.other.attribute-name.class.mixin.css
+    settings:
+      foreground: *CHESTNUTROSE
+
+  # HTML
+  - name: Punctuation
+    scope:
+    - punctuation.definition.string.begin.html
+    - punctuation.definition.string.end.html
+    settings:
+      foreground: *FG
+  - name: HTML attributes
+    scope: entity.other.attribute-name
+    settings:
+      foreground: *ENVY
+  - name: HTML tags
+    scope: entity.name.tag
+    settings:
+      foreground: *CHESTNUTROSE
+  - name: HTML attribute values
+    scope: string.quoted.double.html
+    settings:
+      foreground: *SHADOWGREEN
+  - scope: meta.toc-list.id.html
+    settings:
+      foreground: *TUSSOCK
+
+  # JavaScript
+  - name: String interpolation ${}
+    scope:
+    - punctuation.definition.template-expression.begin
+    - punctuation.definition.template-expression.end
+    settings:
+      foreground: *PINK
+  - name: String interpolation content
+    scope: string.template meta.template.expression
+    settings:
+      foreground: *FG
+  - name: Arrow function arrows
+    scope: storage.type.function.arrow
+    settings:
+      fontStyle: regular
+      foreground: *PINK
+  - name: Object destructuring property name
+    scope: meta.object-binding-pattern-variable variable.object.property
+    settings:
+      fontStyle: italic
+      foreground: *ORANGE
+  - name: Object destructuring punctuation
+    scope: meta.object-binding-pattern-variable punctuation.destructuring
+    settings:
+      foreground: *PINK
+  - name: Import references
+    scope: meta.import variable.other.readwrite
+    settings:
+      fontStyle: italic
+      foreground: *ORANGE
+  - name: Import aliases
+    scope: meta.import variable.other.readwrite.alias
+    settings:
+      fontStyle: normal
+      foreground: *FG
+  - name: Import all asterisk
+    scope: constant.language.import-export-all
+    settings:
+      foreground: *PURPLE
+  - name: Object literal keys with quotes
+    scope: meta.object-literal.key string.quoted
+    settings:
+      foreground: *FG
+
+  # JSON
+  - name: Object keys
+    scope: support.type.property-name.json
+    settings:
+      foreground: *ENVY
+      fontStyle: regular
+  - name: Key-value separators
+    scope: 
+    - punctuation.separator.dictionary.key-value.json
+    - punctuation.definition.string.begin.json
+    - punctuation.definition.string.end.json
+    - punctuation.support.type.property-name.begin.json
+    - punctuation.support.type.property-name.end.json
+    - punctuation.definition.dictionary.begin.json
+    - punctuation.definition.dictionary.end.json
+    - punctuation.definition.array.begin.json
+    - punctuation.definition.array.end.json
+    - punctuation.separator.dictionary.pair.json
+    settings:
+      foreground: *FG 
+  - name: Strings
+    scope: 
+    - meta.structure.dictionary.json
+    - meta.structure.dictionary.value.json
+    - string.quoted.double.json
+    settings:
+      foreground: *TUSSOCK
+  - name: Booleans
+    scope: constant.language.json
+    settings:
+      foreground: *PURPLE
+
+  # PHP
+  - scope:
+    - punctuation.section.embedded.begin.metatag.php
+    - punctuation.section.embedded.end.metatag.php
+    settings:
+      foreground: *FG
+
+  # Python
+  - scope: meta.structure.dictionary.key.python
+    settings:
+      foreground: *GLACIER
+  
+  # Ruby
+  - name: Ruby's @variable
+    scope: variable.other.readwrite.instance
+    settings:
+      foreground: *ORANGE
+
+  # Shell
+  - scope: string.quoted.double.shell variable
+    settings:
+      foreground: *PURPLE
+
+  # TypeScript
+  - scope:
+    - meta.type.annotation meta.type.parameters entity.name.type
+    - meta.type.parameters entity.name.type
+    - meta.indexer.mappedtype.declaration entity.name.type
+    - meta.return.type meta.type.parameters entity.name.type
+    settings:
+      foreground: *ORANGE
+  - scope:
+    - entity.name.type
+    - meta.type.annotation entity.name.type
+    - meta.return.type entity.name.type
+    settings:
+      fontStyle: italic
+      foreground: *GLACIER
+  
+  # YAML
+  - name: Object keys 
+    scope: entity.name.tag.yaml
+    settings:
+      foreground: *ENVY
+  - name: Object values
+    scope: 
+    - string.unquoted.plain.out.yaml
+    - string.quoted.single.yaml
+    settings:
+      foreground: *TUSSOCK
+  - name: Separators / Punctuation
+    scope:
+    - punctuation.definition.block.sequence.item.yaml
+    - punctuation.separator.key-value.mapping.yaml
+    - punctuation.definition.block.scalar.folded.yaml
+    - punctuation.definition.block.scalar.literal.yaml
+    - support.other.chomping-indicator.yaml
+    - punctuation.definition.alias.yaml
+    - punctuation.definition.anchor.yaml
+    - punctuation.definition.string.begin.yaml
+    - punctuation.definition.string.end.yaml
+    settings:
+      foreground: *FG
+  - name: Timestamps
+    scope: constant.other.timestamp.yaml
+    settings:
+      foreground: *ORANGE
+  - name: Entities
+    scope: entity.name.type.anchor.yaml
+    settings:
+      foreground: *CHESTNUTROSE
+  - name: Variable aliases
+    scope: variable.other.alias.yaml
+    settings:
+      fontStyle: italic underline
+      foreground: *CHESTNUTROSE
