@@ -17,14 +17,14 @@
     body {
       padding: 0;
       margin: 0;
-      background: #1e1e1e;
+      background: #1d1f21;
       line-height: 20px;
     }
 
     .sidebar {
       width: 50px;
       height: 100%;
-      position: absolute;
+      position: fixed;
       background: #252526;
     }
 
@@ -44,14 +44,24 @@
       padding: 0 0 0 25px;
     }
 
+    .image {
+      height: 296px;
+      margin: 0;
+      padding: 0;
+    }
+
     .palette li {
       list-style-type: none;
       display: inline-block;
       margin: 0 6px 0 0;
+      padding: 0;
       width: 40px;
       height: 40px;
     }
-    .color-1 { background: #808080; } /* COMMENT */
+
+    .color-0 { background: #1d1f21; } /* BACKGROUND */
+
+    .color-1 { background: #5f5f5f; } /* COMMENT */
     .color-2 { background: #88bbcc; } /* GLACIER */
     .color-3 { background: #cc5555; } /* CHESTNUTROSE */
     .color-4 { background: #99bbbb; } /* SHADOWGREEN */
@@ -60,6 +70,13 @@
     .color-7 { background: #eeccaa; } /* PANCHO */
     .color-8 { background: #aa8899; } /* BOUQUET */
 
+    .color-9 { background: #ad5d40; }
+    .color-10 { background: #989898; } /* FOREGROUND */
+    .color-11 { background: #4d8660; }
+    .color-12 { background: #72a7a7; }
+    .color-13 { background: #a98155; }
+    .color-14 { background: #bba191; }
+
     .dot {
       color: #3d3d3c;
     }
@@ -67,6 +84,25 @@
       color: #808080;
       font-style: italic; 
     }
+    .fg {
+      color: #989898;
+    }
+    .tag {
+      color: #b74363;
+    }
+    .key {
+      color: #5d9073;
+    }
+    .value {
+      color: #80afaf;
+    }
+    .value-alt {
+      color: #ad774f;
+    }
+    .text {
+      color: #bfa396;
+    }
+
   </style>
 
   <!-- Content -->
@@ -105,12 +141,49 @@
       <li>30</li>
       <li>31</li>
       <li>32</li>
+      <li>33</li>
+      <li>34</li>
+      <li>35</li>
+      <li>36</li>
+      <li>37</li>
+      <li>38</li>
+      <li>39</li>
+      <li>40</li>
+      <li>41</li>
+      <li>42</li>
+      <li>43</li>
+      <li>44</li>
+      <li>45</li>
+      <li>46</li>
+      <li>47</li>
+      <li>48</li>
+      <li>49</li>
+      <li>50</li>
+      <li>51</li>
+      <li>52</li>
+      <li>53</li>
+      <li>54</li>
+      <li>55</li>
+      <li>56</li>
+      <li>57</li>
+      <li>58</li>
+      <li>59</li>
+      <li>60</li>
     </div>
     <div class="content">
 
       <!-- Color palette -->
       <div class="palette">
         <br/>
+        <li class="color-9"></li>
+        <li class="color-10"></li>
+        <li class="color-11"></li>
+        <li class="color-12"></li>
+        <li class="color-13"></li>
+        <li class="color-14"></li>
+
+        <li class="color-0"></li>
+
         <li class="color-1"></li>
         <li class="color-2"></li>
         <li class="color-3"></li>
@@ -121,15 +194,20 @@
         <li class="color-8"></li>
       </div>
 
+      <!-- Example image -->
+      <br/>
+      <img src="../images/indark-1.jpg" class="image" alt=""/>
+
       <!-- HTML test -->
       <p>
         <span class="comment">&lt;!-- HTML example comment --&gt;</span><br/>
-        &lt;div data-role="header" id="header" class="no-border"&gt;<br/>
-          <span class="dot">&middot;&middot;</span>&lt;div class="presence-logo-header center"&gt;<br/>
-            <span class="dot">&middot;&middot;&middot;&middot;</span>&lt;img src="/img/presence-logo-white.png" class="full-width"&gt;<br/>
-          <span class="dot">&middot;&middot;</span>&lt;/div&gt;<br/>
-          <span class="dot">&middot;&middot;</span>&lt;a href="#" onclick="openMenu(event)" data-i18n&gt;global:buttons.menu&lt;/a&gt;<br/>
-        &lt;/div&gt;
+        <span class="fg">&lt;</span><span class="tag">div</span> <span class="key">data-role</span><span class="fg">=</span><span class="value">"header"</span> <span class="key">id</span><span class="fg">=</span><span class="value-alt">"header"</span> <span class="key">class</span><span class="fg">=</span><span class="value">"no-border"</span><span class="fg">&gt;</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="fg">&lt;</span><span class="tag">div</span> <span class="key">class</span><span class="fg">=</span><span class="value">"presence-logo-header center"</span><span class="fg">&gt;</span><br/>
+            <span class="dot">&middot;&middot;&middot;&middot;</span><span class="text">Lorem ipsum dolor sit amet, consectetur.</span><br/>
+            <span class="dot">&middot;&middot;&middot;&middot;</span><span class="fg">&lt;</span><span class="tag">img</span> <span class="key">src</span><span class="fg">=</span><span class="value">"/img/presence-logo-white.png"</span> <span class="key">class</span><span class="fg">=</span><span class="value">"full-width"</span><span class="fg">/&gt;</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="fg">&lt;/</span><span class="tag">div</span><span class="fg">&gt;</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="fg">&lt;</span><span class="tag">a</span> <span class="key">href</span><span class="fg">=</span><span class="value">"#"</span> <span class="key">onclick</span><span class="fg">=</span><span class="value">"openMenu(event)"</span> <span class="key">data-i18n</span><span class="fg">&gt;</span><span class="text">global:buttons.menu</span><span class="fg">&lt;/</span><span class="tag">a</span><span class="fg">&gt;</span><br/>
+        <span class="fg">&lt;/</span><span class="tag">div</span><span class="fg">&gt;</span>
       </p>
 
       <!-- CSS test -->
