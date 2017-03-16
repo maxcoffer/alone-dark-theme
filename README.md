@@ -2,7 +2,7 @@
 
 Dark theme for [Visual Studio Code](http://code.visualstudio.com) inspired by amazing [Alone in the Dark](goo.gl/32Ghc0) horror PC game.
 
-![Screenshot](https://github.com/maxcoffer/alone-dark-theme/src/images/indark-1.jpg)
+![Screenshot](https://github.com/maxcoffer/alone-dark-theme/blob/master/src/images/indark-1.jpg)
 
 ## Install
 
