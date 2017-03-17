@@ -27,7 +27,7 @@ div { }
 [attr] { font-size:smaller; }
 
 /* or that the attribute has a specific value */
-[attr='value'] { font-size:smaller; }
+[attr='value'] { font-size:smaller !important; }
 
 /* starts with a value (CSS 3) */
 [attr^='val'] { font-size:smaller; }

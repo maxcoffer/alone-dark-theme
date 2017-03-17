@@ -1,10 +1,10 @@
 {
   "name": "alone-dark-theme",
-  "version": "0.0.3",
+  "version": "0.2.0",
   "displayName": "Alone in the Dark Theme",
   "homepage": "https://github.com/maxcoffer/alone-dark-theme",
-  "description": "Alone in the Dark Theme for Visual Studio Code",
-  "publisher": "alone-dark-theme",
+  "description": "Alone in the Dark Theme for VS Code",
+  "publisher": "maxcoffer",
   "license": "MIT",
   "scripts": {
     "build": "mkdir -p ./theme && node ./build.js",
@@ -40,5 +40,8 @@
   },
   "devDependencies": {
     "js-yaml": "^3.8.2"
+  },
+  "__metadata": {
+    "publisherDisplayName": "Edward Carnby"
   }
 }

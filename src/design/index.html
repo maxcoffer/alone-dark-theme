@@ -20,7 +20,6 @@
       background: #1d1f21;
       line-height: 20px;
     }
-
     .sidebar {
       width: 50px;
       height: 100%;
@@ -59,48 +58,85 @@
       height: 40px;
     }
 
+    .color-9 { background: #ad5d40; }
+    .color-10 { background: #a2a2a2; } /* FOREGROUND */
+    .color-11 { background: #5c8c69; } /* FROG */
+    .color-120 { background: #859e9c; }
+    .color-12 { background: #72a7a7; } /* ATTIRE */
+    .color-13 { background: #a98155; }
+    .color-132 { background: #a56f50; } /* DARKWOOD */
+    .color-14 { background: #a98b79; } /* SCARYSKIN */
+
     .color-0 { background: #1d1f21; } /* BACKGROUND */
 
     .color-1 { background: #5f5f5f; } /* COMMENT */
     .color-2 { background: #88bbcc; } /* GLACIER */
     .color-3 { background: #cc5555; } /* CHESTNUTROSE */
-    .color-4 { background: #99bbbb; } /* SHADOWGREEN */
+    .color-4 { background: #929d9e; } /* SHADOWGREEN */
     .color-5 { background: #88aa88; } /* ENVY */
-    .color-6 { background: #cc9944; } /* TUSSOCK */
+    .color-6 { background: #b18845; } /* TUSSOCK */
     .color-7 { background: #eeccaa; } /* PANCHO */
-    .color-8 { background: #aa8899; } /* BOUQUET */
-
-    .color-9 { background: #ad5d40; }
-    .color-10 { background: #989898; } /* FOREGROUND */
-    .color-11 { background: #4d8660; }
-    .color-12 { background: #72a7a7; }
-    .color-13 { background: #a98155; }
-    .color-14 { background: #bba191; }
+    .color-8 { background: #a96099; } /* BOUQUET */
 
     .dot {
       color: #3d3d3c;
     }
     .comment {
-      color: #808080;
+      color: #5f5f5f;
       font-style: italic; 
     }
     .fg {
-      color: #989898;
+      color: #a2a2a2; /* FOREGROUND */
     }
-    .tag {
-      color: #b74363;
+    .tag,
+    .css-tag,
+    .css-special,
+    .js-global {
+      color: #bd5454; /* COLOR 30 (CHESTNUTROSE) */
     }
-    .key {
-      color: #5d9073;
+    .key,
+    .css-class,
+    .js-func-name {
+      color: #5c8c69; /* FROG */
     }
-    .value {
-      color: #80afaf;
+    .value,
+    .css-value,
+    .json-value,
+    .js-param {
+      color: #a56f50; /* COLOR 132 (DARKWOOD) */
     }
-    .value-alt {
-      color: #ad774f;
+    .value-alt,
+    .css-id,
+    .js-func,
+    .js-num,
+    .js-bool {
+      color: #a96099; /* BOUQUET */
     }
-    .text {
-      color: #bfa396;
+    .text,
+    .css-key,
+    .json-key,
+    .js-var {
+      color: #929d9e; /* COLOR 120 (SHADOWGREEN) */
+    }
+    .css-pseudo,
+    .css-prefix,
+    .css-quote,
+    .js-quote {
+      color: #b18845; /* COLOR 60 (TUSSOCK) */
+    }
+    .css-url {
+      color: #a56f50; /* COLOR 132 (DARKWOOD) */
+      font-style: italic;
+    }
+    .css-unit,
+    .js-other,
+    .js-console {
+      color: #a98b79; /* SCARYSKIN */
+      font-style: italic;
+    }
+    .css-mixin,
+    .js-operator {
+      color: #72a7a7; /* ATTIRE */
     }
 
   </style>
@@ -178,8 +214,10 @@
         <li class="color-9"></li>
         <li class="color-10"></li>
         <li class="color-11"></li>
+        <li class="color-120"></li>
         <li class="color-12"></li>
         <li class="color-13"></li>
+        <li class="color-132"></li>
         <li class="color-14"></li>
 
         <li class="color-0"></li>
@@ -196,7 +234,7 @@
 
       <!-- Example image -->
       <br/>
-      <img src="../images/indark-1.jpg" class="image" alt=""/>
+      <img src="../images/indark-2.jpg" class="image" alt=""/>
 
       <!-- HTML test -->
       <p>
@@ -210,25 +248,71 @@
         <span class="fg">&lt;/</span><span class="tag">div</span><span class="fg">&gt;</span>
       </p>
 
-      <!-- CSS test -->
+      <!-- CSS & Preprocessors test -->
       <p>
-        <span class="comment">/* CSS example comment */</span><br/>
-        #presence-page.cc .ui-listview .ui-li-static,<br/>
-        div.internal-usage::after,<br/>
-        .main-style:hover > .normal {<br/>
-          <span class="dot">&middot;&middot;</span>padding: 1em;<br/>
-          <span class="dot">&middot;&middot;</span>background-color: #FFF;<br/>
-          <span class="dot">&middot;&middot;</span>border-color: rgba(34,36,38,.15) !important;<br/>
-          <span class="dot">&middot;&middot;</span>border-radius: .28571429rem;<br/>
-          <span class="dot">&middot;&middot;</span>box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);<br/>
-        }<br/>
-        .presence-page.cc div.ui-controlgroup-label,<br/>
-        [otherAttr~='foo'] {<br/>
-          <span class="dot">&middot;&middot;</span>font-family: "HelveticaNeue-CondensedBold",Helvetica Neue, Arial, sans-serif;<br/>
-          <span class="dot">&middot;&middot;</span>font-stretch: condensed;<br/>
-          <span class="dot">&middot;&middot;</span>background-image: url(/img-path/img.jpg);<br/>
-          <span class="dot">&middot;&middot;</span>border-color:red;<br/>
-        }
+        <span class="comment">/* CSS & Preprocessors example comment */</span><br/>
+        <span class="css-id">#presence-page</span><span class="css-class">.cc .ui-listview .ui-li-static</span><span class="fg">,</span><br/>
+        <span class="css-tag">div</span><span class="css-class">.internal-usage</span><span class="css-pseudo">::after</span><span class="fg">,</span><br/>
+        <span class="css-class">.main-style</span><span class="css-pseudo">:hover</span> <span class="fg">></span> <span class="css-class">.normal</span> <span class="fg">{</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="css-key">padding</span><span class="fg">:</span> <span class="css-value">1em</span><span class="fg">;</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="css-key">background-color</span><span class="fg">:</span> <span class="css-value">#FFF</span><span class="fg">;</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="css-key">border-color</span><span class="fg">:</span> <span class="css-prefix">rgba</span><span class="fg">(</span><span class="css-value">34</span><span class="fg">,</span> <span class="css-value">36</span><span class="fg">,</span> <span class="css-value">38</span><span class="fg">,</span> <span class="css-value">.15</span><span class="fg">)</span></span> <span class="css-special">!important</span><span class="fg">;</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="css-key">border-radius</span><span class="fg">:</span> <span class="css-value">.28571429</span><span class="css-unit">rem</span><span class="fg">;</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="css-key">box-shadow</span><span class="fg">:</span> <span class="css-value">0 1</span><span class="css-unit">px</span> <span class="css-value">2</span><span class="css-unit">px</span> <span class="css-value">0</span> <span class="css-prefix">rgba</span><span class="css-value"><span class="fg">(</span><span class="css-value">34</span><span class="fg">,</span> <span class="css-value">36</span><span class="fg">,</span> <span class="css-value">38</span><span class="fg">,</span> <span class="css-value">.15</span><span class="fg">)</span></span><span class="fg">;</span><br/>
+        <span class="fg">}</span><br/>
+        <span class="css-class">.presence-page.cc</span> <span class="css-tag">div</span><span class="css-class">.ui-controlgroup-label</span><span class="fg">,</span><br/>
+        <span class="fg">[</span><span class="css-class">otherAttr</span><span class="fg">~=</span><span class="css-quote">'foo'</span><span class="fg">] {</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="css-key">font-family</span><span class="fg">:</span> <span class="css-quote">"HelveticaNeue-CondensedBold"</span><span class="fg">,</span> <span class="css-value">Helvetica Neue</span><span class="fg">,</span> <span class="css-value">Arial</span><span class="fg">,</span> <span class="css-value">sans-serif</span><span class="fg">;</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="css-key">font-stretch</span><span class="fg">:</span> <span class="css-value">condensed</span><span class="fg">;</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="css-key">background-image</span><span class="fg">:</span> <span class="css-prefix">url</span><span class="fg">(</span><span class="css-url">/img-path/img.jpg</span><span class="fg">)</span><span class="fg">;</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="css-key">border-color</span><span class="fg">:</span> <span class="css-value">red</span><span class="fg">;</span><br/>
+        <span class="fg">}</span><br/>
+        <span class="css-mixin">@import</span> <span class="css-quote">'reset'</span><span class="fg">;</span>
+      </p>
+
+      <!-- Key-Value test -->
+      <p>
+        <span class="comment"># Key-Value example comment */</span><br/>
+        <span class="fg">{</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="fg">"</span><span class="json-key">name</span><span class="fg">": "</span></span><span class="json-value">alone-dark-theme</span><span class="fg">",</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="fg">"</span><span class="json-key">version</span><span class="fg">": "</span></span><span class="json-value">0.0.3</span><span class="fg">",</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="fg">"</span><span class="json-key">displayName</span><span class="fg">": "</span></span><span class="json-value">Alone in the Dark Theme</span><span class="fg">",</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="fg">"</span><span class="json-key">categories</span><span class="fg">": [</span><br/>
+            <span class="dot">&middot;&middot;&middot;&middot;</span><span class="fg">"</span><span class="json-value">Themes</span><span class="fg">"</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="fg">]</span><br/>
+        <span class="fg">}</span>
+      </p>
+
+      <!-- JavaScript test -->
+      <p>
+        <span class="comment">// JavaScript example comment</span><br/>
+        <span class="js-operator">var</span> <span class="js-var">userTotal</span> <span class="fg">=</span> <span class="js-quote">"/userTotals"</span><span class="fg">;</span><br/>
+        <span class="js-operator">var</span> <span class="js-global">GLOBAL</span> <span class="fg">=</span> <span class="js-bool">false</span><span class="fg">;</span><br/>
+        <span class="js-func">function</span> <span class="js-func-name">myFunction</span><span class="fg">(</span><span class="js-param">thing</span><span class="fg">) {</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="js-operator">return</span> <span class="js-var">thing</span><span class="fg">.</span><span class="js-func-name">toUpperCase</span><span class="fg">();</span><br/>
+        <span class="fg">}</span><br/>
+        <span class="js-var">angular</span><span class="fg">.</span><span class="js-func-name">module</span><span class="fg">(</span><span class="js-quote">'account-services'</span><span class="fg">, [])</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="js-func-name">.factory</span><span class="fg">(</span><span class="js-quote">'accountService'</span><span class="fg">, [</span><span class="js-quote">'$filter'</span><span class="fg">,</span> <span class="js-quote">'$http'</span><span class="fg">,</span> <span class="js-func-name">function</span><span class="fg">(</span><span class="js-param">$filter</span><span class="fg">,</span> <span class="js-param">$http</span><span class="fg">) {</span><br/>
+            <span class="dot">&middot;&middot;&middot;&middot;</span><span class="js-operator">return</span> <span class="fg">{</span><br/>
+              <span class="dot">&middot;&middot;&middot;&middot;&middot;&middot;</span><span class="js-var">forgotPassword</span><span class="fg">:</span> <span class="js-func-name">function</span><span class="fg">(</span><span class="js-param">username</span><span class="fg">,</span> <span class="js-param">forward</span><span class="fg">,</span> <span class="js-param">async</span><span class="fg">,</span> <span class="js-param">callbackFunc</span><span class="fg">) {</span><br/>
+                <span class="dot">&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;</span><span class="js-operator">var</span> <span class="js-var">url</span> <span class="fg">=</span> <span class="js-func-name">getDeveloperRootUrl</span><span class="fg">() +</span> <span class="js-quote">"/newPassword"</span><span class="fg">;</span><br/>
+                <span class="dot">&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;</span><span class="js-global">IOE</span><span class="fg">.</span><span class="js-other">top</span><span class="fg">.</span><span class="js-func-name">get</span><span class="fg">(</span><span class="js-num">null</span><span class="fg">,</span> <span class="js-param">url</span><span class="fg">,</span> <span class="js-param">async</span><span class="fg">, {</span><br/>
+                  <span class="dot">&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;</span><span class="js-var">username</span><span class="fg">:</span> <span class="js-func-name">myFunction</span><span class="fg">(</span><span class="js-param">username</span><span class="fg">),</span><br/>
+                  <span class="dot">&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;</span><span class="js-var">forward</span><span class="fg">:</span> <span class="js-param">forward</span><span class="fg">,</span><br/>
+                  <span class="dot">&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;</span><span class="js-var">async</span><span class="fg">:</span> <span class="js-bool">true</span><br/>
+                <span class="dot">&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;</span><span class="fg">},</span> <span class="js-param">callbackFunc</span><span class="fg">);</span><br/>
+              <span class="dot">&middot;&middot;&middot;&middot;&middot;&middot;</span><span class="fg">}</span><br/>
+            <span class="dot">&middot;&middot;&middot;&middot;</span><span class="fg">}</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="fg">}</span><br/>
+        <span class="js-operator">switch</span> <span class="fg">(</span><span class="js-param">grade</span><span class="fg">) {</span><br/>
+        <span class="js-operator">case</span> <span class="js-quote">'A'</span><span class="fg">:</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="js-operator">if</span> <span class="fg">(</span><span class="js-global">!GLOBAL</span><span class="fg">) {</span><br/>
+            <span class="dot">&middot;&middot;&middot;&middot;</span><span class="js-console">console</span><span class="fg">.</span><span class="js-func-name">log</span><span class="fg">(</span><span class="js-quote">"Great job"</span><span class="fg">);</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="fg">}</span> <span class="js-operator">else</span> <span class="fg">{</span><br/>
+            <span class="dot">&middot;&middot;&middot;&middot;</span><span class="js-other">window</span><span class="fg">.</span><span class="js-var">permanent</span> <span class="fg">=</span> <span class="js-num">10</span><span class="fg">;</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="fg">}</span><br/>
+          <span class="dot">&middot;&middot;</span><span class="js-operator">break</span><span class="fg">;</span><br/>
+        <span class="fg">}</span>
       </p>
     
       <!-- PHP test -->

@@ -6,21 +6,22 @@ maintainers:
 semanticClass: theme.alone
 scheme:
   BG: &BG '#1e1e1e'
-  FG: &FG '#b2b2b2'
+  FG: &FG '#a2a2a2'
   SELECTION: &SELECTION '#3f3f46'
-  COMMENT: &COMMENT '#808080'
+  COMMENT: &COMMENT '#5f5f5f'
   GLACIER: &GLACIER '#88bbcc'
-  CHESTNUTROSE: &CHESTNUTROSE '#cc5555'
-  SHADOWGREEN: &SHADOWGREEN '#99bbbb'
-  ORANGE: &ORANGE '#ffb86c'
-  PINK: &PINK '#ff79c6'
-  PURPLE: &PURPLE '#bd93f9'
-  RED: &RED '#ff5555'
-  ENVY: &ENVY '#88aa88'
-  SCARYSKIN: &SCARYSKIN '#ab8069'
-  TUSSOCK: &TUSSOCK '#cc9944'
-  PANCHO: &PANCHO '#eeccaa'
-  BOUQUET: &BOUQUET '#aa8899'
+  CHESTNUTROSE: &CHESTNUTROSE '#bd5454'
+  SHADOWGREEN: &SHADOWGREEN '#929d9e'
+  FROG: &FROG '#5c8c69'
+  TUSSOCK: &TUSSOCK '#b18845'
+  BOUQUET: &BOUQUET '#a96099'
+  DARKWOOD: &DARKWOOD '#a56f50'
+  SCARYSKIN: &SCARYSKIN '#a98b79'
+  ATTIRE: &ATTIRE '#72a7a7'
+
+  ORANGE: &ORANGE '#ffb86c' # Find alternative
+  PURPLE: &PURPLE '#bd93f9' # Find alternative
+
 settings:
   - settings:
       background: *BG
@@ -38,7 +39,7 @@ settings:
       wordHighlightStrong: '#50fa7b50' # Background color of symbol with write-access.
 
       # Links
-      activeLinkForeground: *SHADOWGREEN
+      activeLinkForeground: *DARKWOOD
 
       # Unused
       caret:
@@ -60,7 +61,7 @@ settings:
       fontStyle: bold
   - scope: header
     settings:
-      foreground: *PINK
+      foreground: *BOUQUET
   - scope: comment
     settings:
       foreground: *COMMENT
@@ -72,16 +73,11 @@ settings:
   # Constants
   - scope: constant.language
     settings:
-      foreground: *SHADOWGREEN
+      foreground: *DARKWOOD
   - scope: 
-    - constant.numeric
     - constant.numeric.integer
     - constant.numeric.float
     - constant.numeric.decimal
-    - constant.numeric.scss
-    - constant.numeric.css
-    - constant.numeric.less
-    - constant.numeric.json
     - constant.numeric.color.rgb-value
     - constant.language.boolean
     - constant.language.null
@@ -91,7 +87,10 @@ settings:
       foreground: *PURPLE
   - scope: constant.regexp
     settings:
-      foreground: *PINK
+      foreground: *BOUQUET
+  - scope: constant.numeric
+    settings:
+      foreground: *DARKWOOD
   
   # Variables
   - scope: variable
@@ -103,17 +102,21 @@ settings:
   - scope: variable.parameter
     settings:
       fontStyle: italic
-      foreground: *ORANGE
+      foreground: *DARKWOOD
   
   # Keywords
-  - scope:
-    - keyword
-    - punctuation.definition.keyword
+  - scope: punctuation.definition.keyword
     settings:
-      foreground: *PINK
+      foreground: *BOUQUET
   - scope: keyword.operator.new
     settings:
       fontStyle: bold
+  - scope: keyword
+    settings:
+      foreground: *SCARYSKIN
+  - scope: keyword.control.operator
+    settings:
+      foreground: *SHADOWGREEN
 
   # Diffs
   - scope:
@@ -138,16 +141,16 @@ settings:
       fontStyle: italic
   - scope: markup.inserted
     settings:
-      foreground: *SHADOWGREEN
+      foreground: *DARKWOOD
   - scope: markup.deleted
     settings:
-      foreground: *RED
+      foreground: *CHESTNUTROSE
   - scope: markup.changed
     settings:
       foreground: *ORANGE
   - scope: invalid
     settings:
-      background: *RED
+      background: *CHESTNUTROSE
       foreground: *FG 
   - scope: invalid.deprecated
     settings:
@@ -158,7 +161,7 @@ settings:
       foreground: *GLACIER
   - scope: markup.error
     settings:
-      foreground: *RED
+      foreground: *CHESTNUTROSE
   
   # Markdown
   - scope:
@@ -168,7 +171,7 @@ settings:
       foreground: *GLACIER
   - scope: markup.inline.raw
     settings:
-      foreground: *SHADOWGREEN
+      foreground: *DARKWOOD
   - scope:
     - markup.underline.link.markdown
     - markup.underline.link.image.markdown
@@ -178,7 +181,7 @@ settings:
     - string.other.link.description.markdown
     - string.other.link.title.markdown
     settings:
-      foreground: *PINK
+      foreground: *BOUQUET
   - scope: markup.quote.markdown
     settings:
       foreground: *COMMENT
@@ -187,7 +190,7 @@ settings:
       foreground: *COMMENT
   - scope: punctuation.definition.markdown
     settings:
-      foreground: *SHADOWGREEN
+      foreground: *DARKWOOD
   - scope: fenced_code.block.language
     settings:
       foreground: *ORANGE 
@@ -209,7 +212,7 @@ settings:
   # Storage
   - scope: storage
     settings:
-      foreground: *PINK
+      foreground: *BOUQUET
   - scope:
     - storage.type.class
     - storage.type.function
@@ -217,7 +220,7 @@ settings:
     - storage.type.type
     settings:
       fontStyle: regular
-      foreground: *PINK
+      foreground: *BOUQUET
   - scope:
     - storage.type
     - storage.type.class.jsdoc
@@ -226,12 +229,12 @@ settings:
       fontStyle: italic
   - scope: storage.modifier
     settings:
-      foreground: *PINK
+      foreground: *BOUQUET
   
   # String
   - scope: string
     settings:
-      foreground: *GLACIER
+      foreground: *ATTIRE
   - scope: string.tag
     settings:
       foreground: *GLACIER
@@ -240,14 +243,14 @@ settings:
       foreground: *GLACIER
   - scope: string.regexp
     settings:
-      foreground: *RED
+      foreground: *CHESTNUTROSE
   
   # Support
   - name: Provided by external / built-in library
     scope:
     - support.function
     settings:
-      foreground: *GLACIER
+      foreground: *ATTIRE
   - name: Defined language constants
     scope: support.constant
     settings:
@@ -273,7 +276,7 @@ settings:
     scope: meta.method.declaration storage.type
     settings:
       fontStyle: regular
-      foreground: *PINK
+      foreground: *BOUQUET
   - name: Variable declarations
     scope: source meta.var.expr storage.type
     settings:
@@ -282,12 +285,12 @@ settings:
   - name: Functions
     scope: entity.name.function
     settings:
-      foreground: *SHADOWGREEN
+      foreground: *DARKWOOD
   - name: Inherited classes
     scope: entity.other.inherited-class
     settings:
       fontStyle: italic underline
-      foreground: *SHADOWGREEN
+      foreground: *DARKWOOD
   - name: Decorators
     scope: 
     - meta.decorator
@@ -298,64 +301,110 @@ settings:
   
   # CSS / CSS Preprocessors
   - scope:
-    - support.constant.property-value
-    - support.constant.color
-    - support.constant.font-name
     - support.constant.media-type
     - support.constant.media
+    - meta.property-list.css
+    - keyword.operator.pattern.css
+    - punctuation.definition.string.begin.css
+    - punctuation.definition.string.end.css
+    - keyword.operator.combinator.css
+    - keyword.operator.less
+    - keyword.operator.css
+    - punctuation.definition.string.begin.scss
+    - punctuation.definition.string.end.scss
     settings:
       foreground: *FG
+  - scope: 
+    - support.type.property-name
+    - support.type.vendored.property-name
+    settings:
+      foreground: *SHADOWGREEN
+  - scope:
+    - punctuation.definition.keyword.less
+    - keyword.control.at-rule.import.less
+    - punctuation.definition.keyword.scss
+    - keyword.control.at-rule.mixin.scss
+    - keyword.control.if.scss
+    - keyword.control.else.scss
+    - keyword.control.at-rule.include.scss
+    - keyword.control.warn.scss
+    - keyword.control.for.scss
+    - keyword.control.while.scss
+    - keyword.control.each.scss
+    - keyword.control.at-rule.function.scss
+    - keyword.control.return.scss
+    - keyword.control.at-rule.import.scss
+    settings:
+      foreground: *ATTIRE
+  - scope: 
+    - support.type.property-value.css
+    - support.constant.property-value
+    - support.constant.font-name
+    - entity.name.tag.custom.css # Tweak for LESS
+    - string.quoted.double.scss
+    - meta.at-rule.import.css
+    settings:
+      foreground: *DARKWOOD
   - scope:
     - constant.numeric.color.hex-value
     - constant.other.color.rgb-value
     - constant.other.rgb-value
+    - support.constant.color
+    - entity.other.attribute-name.pseudo-class.css
+    - entity.other.attribute-name.class.mixin.css
+    - entity.name.function.scss
     settings:
-      foreground: *GLACIER
+      foreground: *ATTIRE
   - scope:
     - variable.css
     - variable.scss
     - variable.stylus
     - variable.other.less
+    - entity.other.attribute-name.id.css
     settings:
-      foreground: *ORANGE
-  - scope:
-    - meta.property-list.css
-    - support.type.vendored.property-name
-    - support.type.property-name
+      foreground: *BOUQUET
+  - scope: entity.other.attribute-name.class.css
     settings:
-      foreground: *ENVY 
-  - name: HTML tags in CSS
-    scope: entity.name.tag.css
-    settings:
-      foreground: *PINK
+      foreground: *FROG
   - scope:
     - entity.other.attribute-name.parent-selector.css
-    - entity.other.attribute-name.pseudo-class.css
     - entity.other.attribute-name.pseudo-element.css
     settings:
       fontStyle: italic
-      foreground: *SHADOWGREEN
+      foreground: *DARKWOOD
   - scope:
-    - entity.other.attribute-name.id.css
+    - entity.name.tag.css
     - source.css.less entity.other.attribute-name.id
     - entity.other.attribute-name.attribute.scss
     - entity.other.attribute-name.scss
-    - entity.other.attribute-name.class.css
-    - entity.other.attribute-name.class.mixin.css
+    - keyword.other.important.css
+    - keyword.other.default.scss
     settings:
       foreground: *CHESTNUTROSE
 
   # HTML
+  - name: Content
+    scope: text.html.basic
+    settings:
+      foreground: *SHADOWGREEN
   - name: Punctuation
     scope:
+    - punctuation.definition.tag.html
+    - punctuation.separator.key-value.html
     - punctuation.definition.string.begin.html
     - punctuation.definition.string.end.html
+    - meta.tag.inline.any.html
+    - meta.tag.inline.any.html
+    - meta.tag.structure.any.html
+    - meta.tag.other.html
+    - meta.tag.block.any.html
+    - meta.tag.any.html
     settings:
       foreground: *FG
   - name: HTML attributes
     scope: entity.other.attribute-name
     settings:
-      foreground: *ENVY
+      foreground: *FROG
   - name: HTML tags
     scope: entity.name.tag
     settings:
@@ -363,10 +412,17 @@ settings:
   - name: HTML attribute values
     scope: string.quoted.double.html
     settings:
-      foreground: *SHADOWGREEN
-  - scope: meta.toc-list.id.html
+      foreground: *DARKWOOD
+  - scope:
+      - string.quoted.single.html
+      - constant.character.entity.html
     settings:
-      foreground: *TUSSOCK
+      foreground: *ATTIRE
+  - scope: 
+      - meta.toc-list.id.html
+      - meta.attribute-with-value.id.html
+    settings:
+      foreground: *BOUQUET
 
   # JavaScript
   - name: String interpolation ${}
@@ -374,7 +430,7 @@ settings:
     - punctuation.definition.template-expression.begin
     - punctuation.definition.template-expression.end
     settings:
-      foreground: *PINK
+      foreground: *BOUQUET
   - name: String interpolation content
     scope: string.template meta.template.expression
     settings:
@@ -383,7 +439,7 @@ settings:
     scope: storage.type.function.arrow
     settings:
       fontStyle: regular
-      foreground: *PINK
+      foreground: *BOUQUET
   - name: Object destructuring property name
     scope: meta.object-binding-pattern-variable variable.object.property
     settings:
@@ -392,7 +448,7 @@ settings:
   - name: Object destructuring punctuation
     scope: meta.object-binding-pattern-variable punctuation.destructuring
     settings:
-      foreground: *PINK
+      foreground: *BOUQUET
   - name: Import references
     scope: meta.import variable.other.readwrite
     settings:
@@ -416,7 +472,7 @@ settings:
   - name: Object keys
     scope: support.type.property-name.json
     settings:
-      foreground: *ENVY
+      foreground: *SHADOWGREEN
       fontStyle: regular
   - name: Key-value separators
     scope: 
@@ -438,7 +494,7 @@ settings:
     - meta.structure.dictionary.value.json
     - string.quoted.double.json
     settings:
-      foreground: *TUSSOCK
+      foreground: *DARKWOOD
   - name: Booleans
     scope: constant.language.json
     settings:
@@ -487,13 +543,13 @@ settings:
   - name: Object keys 
     scope: entity.name.tag.yaml
     settings:
-      foreground: *ENVY
+      foreground: *SHADOWGREEN
   - name: Object values
     scope: 
     - string.unquoted.plain.out.yaml
     - string.quoted.single.yaml
     settings:
-      foreground: *TUSSOCK
+      foreground: *DARKWOOD
   - name: Separators / Punctuation
     scope:
     - punctuation.definition.block.sequence.item.yaml
@@ -501,8 +557,6 @@ settings:
     - punctuation.definition.block.scalar.folded.yaml
     - punctuation.definition.block.scalar.literal.yaml
     - support.other.chomping-indicator.yaml
-    - punctuation.definition.alias.yaml
-    - punctuation.definition.anchor.yaml
     - punctuation.definition.string.begin.yaml
     - punctuation.definition.string.end.yaml
     settings:
@@ -511,12 +565,12 @@ settings:
     scope: constant.other.timestamp.yaml
     settings:
       foreground: *ORANGE
-  - name: Entities
-    scope: entity.name.type.anchor.yaml
-    settings:
-      foreground: *CHESTNUTROSE
   - name: Variable aliases
-    scope: variable.other.alias.yaml
+    scope:
+    - entity.name.type.anchor.yaml
+    - variable.other.alias.yaml
+    - punctuation.definition.anchor.yaml
+    - punctuation.definition.alias.yaml
     settings:
       fontStyle: italic underline
       foreground: *CHESTNUTROSE
